@@ -30,7 +30,7 @@ function myButtons() {
 }
 myButtons();
 
-function tallyOldVotes() {
+function oldVotes() {
     pb.history({
         channel: chan,
         count: 1,
@@ -44,4 +44,54 @@ function tallyOldVotes() {
     });
 }
 
-tallyOldVotes();
+oldVotes();
+
+function publishResults() {
+    pb.publish({
+        channel: chan,
+        message: pollOptions,
+        callback: function(m) {
+            console.log("publishing");
+        }
+    });
+}
+
+function voteUp(pollOptionKey) {
+    return function() {
+        console.log(pollOptions);
+        pollOPtions.eon[pollOptionKey] += 1.0;
+        publishResults();
+    }
+}
+
+function drawChart() {
+    eon.chart({
+        pubnub: pb,
+        channel: chan,
+        history: true,
+        generate: {
+            bindto: '#poll',
+            data: {
+                labels: true,
+                type: 'bar',
+                colors: {
+                    "Palm House" : "#cc0000",
+                    "La Taqueria" : "#336600",
+                    "Foreign Cinema" : "#3333ff",
+                    "Fino Ristorante" : "#33cccc",
+                    "La Mediterranee" : "#993399"
+                }
+            },
+            bar: {
+                width: {
+                    ratio: 0.5
+                }
+            }
+        },
+        tooltip: {
+            show: false
+        }
+    });
+}
+
+drawChart();
