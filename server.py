@@ -19,8 +19,6 @@ def error():
     raise Exception("Error!")
 
 
-
-
 if __name__ == "__main__":
     # debug=True allows for use of DebugToolbarExtension downstream
     app.debug = True
