@@ -11,9 +11,12 @@ app.secret_key = "Livepollpubnub"
 def index():
     """Landing page with poll"""
 
-    return render_template("livepoll.html")
+    return render_template('livepoll.html')
 
+@app.route("/error")
+def error():
 
+    raise Exception("Error!")
 
 
 
@@ -21,8 +24,6 @@ def index():
 if __name__ == "__main__":
     # debug=True allows for use of DebugToolbarExtension downstream
     app.debug = True
-
-    connect_to_db(app)
 
     # Use the DebugToolbar
     DebugToolbarExtension(app)
