@@ -8,7 +8,7 @@ var pollOptions = {
         "La Taqueria" : 0.0,
         "Foreign Cinema" : 0.0,
         "Fino Ristorante" : 0.0,
-        "La Mediterranee" : 0.0
+        "Roam" : 0.0
     }
 };
 
