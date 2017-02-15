@@ -79,7 +79,7 @@ function drawChart() {
                     "La Taqueria" : "#336600",
                     "Foreign Cinema" : "#3333ff",
                     "Fino Ristorante" : "#33cccc",
-                    "La Mediterranee" : "#993399"
+                    "Roam" : "#993399"
                 }
             },
             bar: {
