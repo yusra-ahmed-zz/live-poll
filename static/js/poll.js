@@ -19,7 +19,7 @@ var pb = PUBNUB.init({
 
 function myButtons() {
     var buttonColor;
-    for(key in pollOptions.eon) {
+    for(var key in pollOptions.eon) {
         var b = document.createElement('BUTTON');
         b.setAttribute('id', 'button' + key);
         b.setAttribute('style', 'left:10%;width:6%;margin-left:4%;margin-top:4%;margin-bottom:5%;background-color:buttonColor;color:white;');
@@ -61,7 +61,7 @@ function voteUp(pollOptionKey) {
         console.log(pollOptions);
         pollOPtions.eon[pollOptionKey] += 1.0;
         publishResults();
-    }
+    };
 }
 
 function drawChart() {
