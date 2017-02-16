@@ -5,15 +5,21 @@
     <meta name=’viewport’ content=’initial-scale=1,maximum-scale=1,user-scalable=no’ />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.js'></script>
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.css' type='text/css' />
     <style>
-        body { margin:0; padding:0; }
-        #maps { position:absolute; top:0; bottom:0; width:100%; }
+        body { margin:0; padding:0;}
+        #map-container {
+            height:500px;
+        }
+        .modal-body {
+            padding: 0;
+        }
     </style>
 </head>
 <body>
 
 <div class="modal fade" id="restaurant-map" tabindex="-1" role="dialog" aria-labelledby="map-label" aria-hidden="true">
-    <div class="Cadd-event-modal" style="width: 600px; margin: 0px auto; margin-top: 10%;">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -21,13 +27,12 @@
                 <h4 class="modal-title Cfont-1">Search Restaurants</h4>
             </div>
                 <div class="modal-body">
-                    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.js'></script>
-                    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.css' type='text/css' />
-                    <div id='maps' style="width: 540px"></div>
+                    <div id='map-container'>
+                    </div>
                     <script>
                         mapboxgl.accessToken = 'pk.eyJ1IjoieXVzcmEiLCJhIjoiY2l6N2kwZGNhMDBoYzMybnlzcjd3cnJ6bSJ9.y0W2AKBv_pQIwr-Q-wJ9xg';
                         var maps = new mapboxgl.Map({
-                            container: 'maps',
+                            container: 'map-container',
                             style: 'mapbox://styles/mapbox/light-v9',
                             center: [-122.431297, 37.773972],
                             zoom: 13
@@ -38,9 +43,6 @@
 
                         function restaurantMap() {
                             $('#restaurant-map').show();
-                        }
-
-                        function mapResize() {
                             maps.resize();
                         }
 
