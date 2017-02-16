@@ -13,23 +13,35 @@
 </head>
 <body>
 
-<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.js'></script>
-<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.css' type='text/css' />
-<div id='map'></div>
+<div class="modal fade" id="user_profile" tabindex="-1" role="dialog" aria-labelledby="user_label">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <div class="modal-body">
+                            <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.js'></script>
+                            <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.css' type='text/css' />
+                            <div id='map'></div>
 
-<script>
-mapboxgl.accessToken = 'pk.eyJ1IjoieXVzcmEiLCJhIjoiY2l6N2kwZGNhMDBoYzMybnlzcjd3cnJ6bSJ9.y0W2AKBv_pQIwr-Q-wJ9xg';
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v9',
-    center: [-79.4512, 43.6568],
-    zoom: 13
-});
+                            <script>
+                            mapboxgl.accessToken = 'pk.eyJ1IjoieXVzcmEiLCJhIjoiY2l6N2kwZGNhMDBoYzMybnlzcjd3cnJ6bSJ9.y0W2AKBv_pQIwr-Q-wJ9xg';
+                            var map = new mapboxgl.Map({
+                                container: 'map',
+                                style: 'mapbox://styles/mapbox/streets-v9',
+                                center: [-79.4512, 43.6568],
+                                zoom: 13
+                            });
 
-map.addControl(new MapboxGeocoder({
-    accessToken: mapboxgl.accessToken
-}));
-</script>
+                            map.addControl(new MapboxGeocoder({
+                                accessToken: mapboxgl.accessToken
+                            }));
+                            </script>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
