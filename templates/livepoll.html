@@ -24,14 +24,15 @@
           </div>
           <div class ="row">
             <div class="col-xs-8 offset-4 col-sm-8 col-md-8 col-lg-8 left-buffer">
-              <h2>Where should we go for dinner tonight?</h2>
+              <h3>Where should we go for dinner tonight?</h3>
+              <button type="button" class="btn btn-default btn-md" data-toggle="modal" data-target="#restaurant-map">View restaurant map</button>
             </div>
           </div>
         </div>
     </div>
+    <br>
     <div id="poll"></div>
     <script src="/static/js/poll.js"></script>
-    <button type="button" class="btn btn-default btn-md" data-toggle="modal" data-target="#restaurant-map">View on map</button>
 
 {% include 'mapbox.html' %} 
 
