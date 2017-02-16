@@ -14,7 +14,10 @@
     <link rel="stylesheet" href="/static/css/style.css" />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.css' rel='stylesheet' />
-
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
 </head>
 <body>
     <div class='polltopic'>
@@ -40,9 +43,13 @@ mapboxgl.accessToken = 'pk.eyJ1IjoieXVzcmEiLCJhIjoiY2l6N2kwZGNhMDBoYzMybnlzcjd3c
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v9'
-    center: [-74.50, 40], // starting position
-    zoom: 9
+    center: [-79.4512, 43.6568], // starting position
+    zoom: 13
 });
+
+map.addControl(new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken
+}));
 </script> 
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
