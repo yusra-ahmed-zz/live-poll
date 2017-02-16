@@ -17,9 +17,10 @@ var pb = PUBNUB.init({
     subscribe_key: subKey
 });
 
+//restaurant buttons
 function myButtons() {
     var buttonColor;
-    for(key in pollOptions.eon) {
+    for(var key in pollOptions.eon) {
         var b = document.createElement('BUTTON');
         b.setAttribute('id', 'button' + key);
         b.setAttribute('style', 'left:10%;width:6%;margin-left:4%;margin-top:4%;margin-bottom:5%;background-color:buttonColor;color:white;');
@@ -30,6 +31,7 @@ function myButtons() {
 }
 myButtons();
 
+//show history
 function oldVotes() {
     pb.history({
         channel: chan,
@@ -46,6 +48,7 @@ function oldVotes() {
 
 oldVotes();
 
+//count of votes
 function publishResults() {
     pb.publish({
         channel: chan,
