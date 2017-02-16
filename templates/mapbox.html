@@ -23,16 +23,17 @@
                                 <div id='map'></div>
                                 <script>
                                 mapboxgl.accessToken = 'pk.eyJ1IjoieXVzcmEiLCJhIjoiY2l6N2kwZGNhMDBoYzMybnlzcjd3cnJ6bSJ9.y0W2AKBv_pQIwr-Q-wJ9xg';
-                                var map = new mapboxgl.Map({
+                                var myMap = new mapboxgl.Map({
                                     container: 'map',
-                                    style: 'mapbox://styles/mapbox/streets-v9',
-                                    center: [-79.4512, 43.6568],
+                                    style: 'mapbox://styles/mapbox/light-v9',
+                                    center: [-122.431297, 37.773972],
                                     zoom: 13
                                 });
 
-                                map.addControl(new MapboxGeocoder({
+                                myMap.addControl(new MapboxGeocoder({
                                     accessToken: mapboxgl.accessToken
                                 }));
+                                </script>
                             </div>
                         </div>
                 </div>
