@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, flash, redirect, session
 from flask_debugtoolbar import DebugToolbarExtension
+from jinja2 import StrictUndefined
 
 async_mode = None
 
