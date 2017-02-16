@@ -2,27 +2,26 @@
 <html lang="en">
 <head>
     <title>Interview App Live Poll</title>
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Hammersmith+One|Lato" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.5/socket.io.min.js"></script>
+    <script src="http://cdn.pubnub.com/pubnub-3.4.4.js"></script>
+    <script type="text/javascript" src="http://pubnub.github.io/eon/v/eon/0.0.10/eon.js"></script>
+    <link type="text/css" rel="stylesheet" href="http://pubnub.github.io/eon/v/eon/0.0.10/eon.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.css' rel='stylesheet' />
+
 </head>
-
-
 <body>
     <div class='polltopic'>
         <div class="container-fluid">
           <div class="row top-buffer">
             <div class="col-lg-4 offset-4 col-sm-8 col-md-6">
-                <script src="http://cdn.pubnub.com/pubnub-3.4.4.js"></script>
-                <script type="text/javascript" src="http://pubnub.github.io/eon/v/eon/0.0.10/eon.js">
-                </script>
-                <link type="text/css" rel="stylesheet" href="http://pubnub.github.io/eon/v/eon/0.0.10/eon.css" />
-                <link rel="stylesheet" href="/static/css/style.css" />
-                <h1>Restaurant Poll</h1>
+              <h1>Restaurant Poll</h1>
             </div>
           </div>
           <div class ="row">
@@ -35,39 +34,16 @@
     <div id="poll"></div>
     <script src="/static/js/poll.js"></script>
 
-    <div class='map'>
-        <div class="container-fluid">
-            <div class="row top-buffer">
-                <div class="col-lg-4 offset-4 col-sm-8 col-md-6">
-                    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-                    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.js'></script>
-                    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.css' rel='stylesheet' />
-                    <style>
-                        body { margin:0; padding:0; }
-                        #map { position:absolute; top:50; bottom:0; width:100%; }
-                    </style>
-
-                    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.js'></script>
-                    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.css' type='text/css' />
-                    <div id='map'></div>
-
-                    <script>
-                    mapboxgl.accessToken = 'pk.eyJ1IjoieXVzcmEiLCJhIjoiY2l6N2kwZGNhMDBoYzMybnlzcjd3cnJ6bSJ9.y0W2AKBv_pQIwr-Q-wJ9xg';
-                    var map = new mapboxgl.Map({
-                        container: 'map',
-                        style: 'mapbox://styles/mapbox/light-v9',
-                        center: [-79.4512, 43.6568],
-                        zoom: 13
-                    });
-
-                    map.addControl(new MapboxGeocoder({
-                        accessToken: mapboxgl.accessToken
-                    }));
-                    </script>
-                </div>
-            </div>
-        </div>
-    </div> 
+<div id='map' style='width: 400px; height: 300px;'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoieXVzcmEiLCJhIjoiY2l6N2kwZGNhMDBoYzMybnlzcjd3cnJ6bSJ9.y0W2AKBv_pQIwr-Q-wJ9xg';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/light-v9'
+    center: [37.7749, 122.4194], // starting position
+    zoom: 9
+});
+</script> 
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
