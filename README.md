@@ -20,8 +20,11 @@ PubNub Polling API
 
 Users can vote for the restaurant of their choice which gets stored in polling history so multiple people can vote.
 
+![alt text](https://raw.githubusercontent.com/yusra-ahmed/live-poll/master/static/readme/poll.png "live-poll")
+
 Users may choose to view all the restaurants' locations on a map which is rendered in a bootstrap modal to help them pick a place that's geographically convenient.
 
+![alt text](https://raw.githubusercontent.com/yusra-ahmed/live-poll/master/static/readme/mapbox.png "map")
 
 ## <a name="install"></a>Installation
 
