@@ -18,4 +18,4 @@ class FlaskTests(unittest.TestCase):
         self.assertIn('LadyNerds', result.data)
 
 if __name__ == "__main__":
-    unittest.main()
+    unittest.main(verbosity=2)
