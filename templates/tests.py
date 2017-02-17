@@ -1,7 +1,6 @@
 import unittest
 import server
 from server import app
-import server
 
 
 class IntegrationTests(unittest.TestCase):
